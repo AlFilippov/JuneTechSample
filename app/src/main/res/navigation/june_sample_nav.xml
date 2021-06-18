@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/june_sample_nav"
+    app:startDestination="@id/list_destination">
+    <fragment
+        android:id="@+id/list_destination"
+        android:name="com.alfilippov.junetechsample.ui.ListNameFragment"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/next_action"
+            app:destination="@id/detail_destination" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detail_destination"
+        android:name="com.alfilippov.junetechsample.ui.ListDetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <action
+            android:id="@+id/next_action"
+            app:popUpTo="@layout/fragment_list" />
+        <argument
+            android:name="numberUser"
+            android:defaultValue="1"
+            app:argType="integer" />
+    </fragment>
+</navigation>
